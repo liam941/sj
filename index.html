@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 14th Anniversary</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Happy 14th Anniversary!</h1>
+            <p>Celebrating Love, Commitment, and Togetherness</p>
+            <div class="envelope" onclick="showMessage()">✉</div>
+        </header>
+        <div class="photo-container">
+            <div class="left">
+                <img src="mother.jpg" alt="Mother" class="photo">
+            </div>
+            <div class="center">
+                <div class="heart">❤</div>
+                <div class="message">14 Years of Love</div>
+            </div>
+            <div class="right">
+                <img src="father.jpg" alt="Father" class="photo">
+            </div>
+        </div>
+        <div id="popup-message" class="popup-hidden">
+            <div class="popup-content">
+                <span class="close-button" onclick="hideMessage()">×</span>
+                <p>Dear Mom and Dad,<br><br>
+                Happy 14th Anniversary! Today, we celebrate not just the years that have passed, but the love that has grown and flourished between you. Your journey together is a beautiful testament to the power of love, commitment, and partnership.<br><br>
+                Through every challenge and triumph, you have shown us what it means to stand by one another, to support each other’s dreams, and to create a home filled with warmth and laughter. Your love is a guiding light, illuminating the path for all of us who are lucky enough to witness it.<br><br>
+                Thank you for the countless lessons you’ve taught us about kindness, patience, and resilience. Your unwavering bond inspires us to cherish our own relationships and to believe in the magic of love.<br><br>
+                As you celebrate this special milestone, may you continue to create beautiful memories together, filled with joy, adventure, and endless love!<br><br>
+                With all my love</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

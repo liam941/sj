@@ -1,0 +1,226 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('heart.png'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    position: relative;
+    overflow: hidden; /* Clip the falling hearts */
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 48px;
+    color: #e91e63; /* Pink color */
+    font-family: 'Great Vibes', cursive;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+p {
+    font-size: 20px;
+    color: #333;
+    margin: 10px 0 20px;
+}
+
+.photo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.photo {
+    width: 180px;
+    height: 270px;
+    object-fit: cover;
+    border: 5px solid white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.photo:hover {
+    transform: scale(1.05);
+}
+
+.center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heart {
+    font-size: 100px;
+    color: #e91e63; /* Pink color */
+    animation: pulse 1.5s infinite, fadeIn 2s ease-in-out;
+}
+
+.message {
+    font-size: 28px;
+    font-weight: bold;
+    color: #e91e63; /* Pink color */
+    margin-top: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 2s ease-in-out;
+}
+
+.envelope {
+    font-size: 60px;
+    cursor: pointer;
+    margin: 20px 0;
+    color: #e91e63; /* Pink color */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+}
+
+.envelope:hover {
+    transform: scale(1.1);
+}
+
+/* Popup Styles */
+#popup-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    color: #fff; /* White text color */
+}
+
+#popup-message.popup-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-content {
+    background: url('white.jpg') no-repeat center center; /* Add a background image */
+    background-size: cover;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    position: relative;
+    max-width: 80%;
+    max-height: 80%;
+    overflow-y: auto; /* Enable scrolling if content is too long */
+    color: #fff; /* White text color */
+    font-size: 18px;
+}
+
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    background-color: #e91e63; /* Pink color */
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0; /* Adjust line-height to vertically center the 'X' */
+    padding: 0; /* Remove padding */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.close-button:hover {
+    background-color: #c2185b; /* Darker pink on hover */
+}
+
+/* Falling Hearts Animation */
+.container:before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: url('hearts.png') repeat-x; /* Replace with a hearts image */
+    animation: fallingHearts 5s linear infinite;
+}
+
+/* Keyframes for Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fallingHearts {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 0; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .photo {
+        width: 120px;
+        height: 180px;
+    }
+
+    .heart {
+        font-size: 60px;
+    }
+
+    .message {
+        font-size: 20px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .envelope {
+        font-size: 40px;
+    }
+
+    .popup-content {
+        padding: 20px;
+        font-size: 16px;
+    }
+}
